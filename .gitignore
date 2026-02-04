@@ -1,0 +1,68 @@
+# AITI Assistant - Git Ignore
+
+# Environment
+.env
+.env.local
+.env.*.local
+*.env
+
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+venv/
+ENV/
+.venv/
+
+# Data (keep structure, ignore content)
+data/documents/*
+!data/documents/.gitkeep
+data/vectorstore/*
+!data/vectorstore/.gitkeep
+data/*.db
+*.db
+
+# Logs
+logs/
+*.log
+
+# IDE
+.idea/
+.vscode/
+*.swp
+*.swo
+*~
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Testing
+.pytest_cache/
+.coverage
+htmlcov/
+
+# Docker
+.docker/
+
+# Temporary
+tmp/
+temp/
+*.tmp

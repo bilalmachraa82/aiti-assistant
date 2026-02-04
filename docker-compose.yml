@@ -1,0 +1,47 @@
+# AITI Assistant - Docker Compose
+version: '3.8'
+
+services:
+  api:
+    build: .
+    container_name: aiti-assistant
+    ports:
+      - "8000:8000"
+    environment:
+      - OPENAI_API_KEY=${OPENAI_API_KEY}
+      - LLM_MODEL=${LLM_MODEL:-gpt-4o-mini}
+      - EMBEDDING_MODEL=${EMBEDDING_MODEL:-text-embedding-3-small}
+      - COMPANY_NAME=${COMPANY_NAME:-Empresa}
+      - LOG_LEVEL=${LOG_LEVEL:-INFO}
+      - DEBUG=${DEBUG:-false}
+    volumes:
+      - ./data:/app/data
+      - ./logs:/app/logs
+    restart: unless-stopped
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:8000/api/health/live"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+      start_period: 10s
+
+  telegram-bot:
+    build: .
+    container_name: aiti-telegram
+    command: python -m app.bot.telegram
+    environment:
+      - TELEGRAM_BOT_TOKEN=${TELEGRAM_BOT_TOKEN}
+      - OPENAI_API_KEY=${OPENAI_API_KEY}
+      - LLM_MODEL=${LLM_MODEL:-gpt-4o-mini}
+      - COMPANY_NAME=${COMPANY_NAME:-Empresa}
+    volumes:
+      - ./data:/app/data
+    depends_on:
+      - api
+    restart: unless-stopped
+    profiles:
+      - telegram  # Only starts with: docker-compose --profile telegram up
+
+volumes:
+  data:
+  logs:

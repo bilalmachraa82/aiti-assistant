@@ -1,0 +1,95 @@
+# FAQ - Empresa Exemplo, Lda
+
+## Entregas
+
+### Qual é o prazo de entrega?
+O prazo de entrega varia consoante a localização:
+- Lisboa e Porto: 24 a 48 horas úteis
+- Resto do país: 2 a 3 dias úteis
+- Ilhas (Açores e Madeira): 5 a 7 dias úteis
+
+### Quanto custa a entrega?
+- Compras acima de 50€: Entrega gratuita
+- Compras até 50€: 4,90€
+- Entrega express (mesmo dia em Lisboa): 9,90€
+
+### Posso escolher a hora de entrega?
+Sim, durante o checkout pode seleccionar uma janela horária:
+- Manhã (9h-13h)
+- Tarde (14h-18h)
+- Noite (18h-21h) - apenas em Lisboa e Porto
+
+### Como acompanho a minha encomenda?
+Após expedição, receberá um email com o número de tracking. Pode acompanhar a encomenda em tempo real através do link fornecido ou na área de cliente do nosso website.
+
+## Pagamentos
+
+### Quais os métodos de pagamento aceites?
+Aceitamos os seguintes métodos:
+- MB Way
+- Cartão de crédito/débito (Visa, Mastercard)
+- Referência Multibanco
+- PayPal
+- Transferência bancária
+
+### O pagamento é seguro?
+Sim, todas as transacções são processadas através de sistemas seguros com encriptação SSL. Não guardamos dados de cartões de crédito.
+
+### Posso pagar em prestações?
+Sim, para compras acima de 100€ oferecemos:
+- 3x sem juros
+- 6x com taxa de 2%
+- 12x com taxa de 5%
+
+## Devoluções e Trocas
+
+### Qual o prazo para devolução?
+Tem 14 dias após a recepção para devolver o produto, sem necessidade de justificação. Para produtos com defeito, o prazo é de 2 anos (garantia legal).
+
+### Como faço uma devolução?
+1. Aceda à área de cliente
+2. Seleccione a encomenda e os produtos a devolver
+3. Imprima a etiqueta de devolução (gratuita)
+4. Embale os produtos na embalagem original
+5. Entregue num ponto de recolha ou agende recolha em casa
+
+### Quanto tempo demora o reembolso?
+O reembolso é processado em 5 a 7 dias úteis após recebermos e verificarmos os produtos devolvidos. O valor é creditado no método de pagamento original.
+
+### Posso trocar por outro tamanho ou cor?
+Sim, trocas são gratuitas. Siga o processo de devolução e indique que pretende troca. Assim que recebermos o produto, enviamos o novo.
+
+## Produtos
+
+### Os produtos têm garantia?
+Sim, todos os produtos têm garantia legal de 2 anos. Alguns produtos têm garantia estendida do fabricante - consulte a ficha de produto.
+
+### Como sei se um produto está disponível?
+Na página de cada produto pode ver a disponibilidade em tempo real. Se mostrar "Em stock", o produto será expedido em 24h.
+
+### Posso reservar um produto?
+Sim, produtos esgotados podem ser reservados. Será notificado assim que estiver disponível e terá 48h para finalizar a compra.
+
+## Conta e Privacidade
+
+### Como crio uma conta?
+Pode criar conta durante o checkout ou directamente em "A Minha Conta". Apenas precisamos do seu email e de criar uma password.
+
+### Os meus dados estão protegidos?
+Sim, cumprimos o RGPD. Os seus dados são utilizados apenas para processar encomendas e, se autorizar, para comunicações comerciais. Pode solicitar a eliminação dos seus dados a qualquer momento.
+
+### Como altero os meus dados?
+Aceda a "A Minha Conta" > "Dados Pessoais". Pode alterar morada, email, password e preferências de comunicação.
+
+## Contacto
+
+### Como posso contactar o serviço de cliente?
+- Chat: Disponível no website (9h-18h)
+- Email: apoio@empresaexemplo.pt (resposta em 24h)
+- Telefone: 210 123 456 (9h-18h, dias úteis)
+- WhatsApp: +351 912 345 678
+
+### Qual o horário de atendimento?
+- Segunda a Sexta: 9h às 18h
+- Sábados: 10h às 14h
+- Domingos e Feriados: Encerrado

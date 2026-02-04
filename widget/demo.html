@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AITI Assistant - Demo</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .header {
+            background: rgba(255,255,255,0.1);
+            padding: 20px 40px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            color: white;
+            font-size: 24px;
+            font-weight: 700;
+        }
+
+        .logo span {
+            opacity: 0.8;
+            font-weight: 400;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            margin-left: 30px;
+            opacity: 0.9;
+            transition: opacity 0.2s;
+        }
+
+        nav a:hover {
+            opacity: 1;
+        }
+
+        .hero {
+            flex: 1;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 40px;
+        }
+
+        .hero-content {
+            max-width: 600px;
+            color: white;
+            text-align: center;
+        }
+
+        .hero h1 {
+            font-size: 48px;
+            margin-bottom: 20px;
+            line-height: 1.2;
+        }
+
+        .hero p {
+            font-size: 18px;
+            opacity: 0.9;
+            margin-bottom: 30px;
+            line-height: 1.6;
+        }
+
+        .cta-button {
+            display: inline-block;
+            background: white;
+            color: #764ba2;
+            padding: 16px 40px;
+            border-radius: 30px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 16px;
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+
+        .cta-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+        }
+
+        .features {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+            margin-top: 60px;
+        }
+
+        .feature {
+            background: rgba(255,255,255,0.1);
+            padding: 24px;
+            border-radius: 12px;
+            text-align: left;
+        }
+
+        .feature-icon {
+            font-size: 32px;
+            margin-bottom: 12px;
+        }
+
+        .feature h3 {
+            font-size: 18px;
+            margin-bottom: 8px;
+        }
+
+        .feature p {
+            font-size: 14px;
+            opacity: 0.8;
+            margin: 0;
+        }
+
+        .footer {
+            background: rgba(0,0,0,0.1);
+            padding: 20px 40px;
+            color: white;
+            text-align: center;
+            font-size: 14px;
+            opacity: 0.8;
+        }
+
+        .demo-badge {
+            position: fixed;
+            top: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: #ff6b6b;
+            color: white;
+            padding: 8px 20px;
+            border-radius: 20px;
+            font-size: 14px;
+            font-weight: 600;
+            z-index: 1000;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+        }
+
+        .try-questions {
+            background: rgba(255,255,255,0.15);
+            padding: 20px 30px;
+            border-radius: 12px;
+            margin-top: 40px;
+        }
+
+        .try-questions h4 {
+            font-size: 14px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 15px;
+            opacity: 0.8;
+        }
+
+        .try-questions ul {
+            list-style: none;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+
+        .try-questions li {
+            background: rgba(255,255,255,0.2);
+            padding: 8px 16px;
+            border-radius: 20px;
+            font-size: 14px;
+            cursor: pointer;
+            transition: background 0.2s;
+        }
+
+        .try-questions li:hover {
+            background: rgba(255,255,255,0.3);
+        }
+
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 32px;
+            }
+            .features {
+                grid-template-columns: 1fr;
+            }
+            .header {
+                flex-direction: column;
+                gap: 15px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="demo-badge">🎯 Página de Demonstração</div>
+
+    <header class="header">
+        <div class="logo">AITI <span>Assistant</span></div>
+        <nav>
+            <a href="#features">Funcionalidades</a>
+            <a href="#pricing">Preços</a>
+            <a href="#contact">Contacto</a>
+        </nav>
+    </header>
+
+    <main class="hero">
+        <div class="hero-content">
+            <h1>Atendimento Inteligente 24/7</h1>
+            <p>
+                O AITI Assistant responde às questões dos seus clientes de forma automática, 
+                usando a documentação da sua empresa. Reduza 70% das chamadas repetitivas.
+            </p>
+            <a href="#" class="cta-button" onclick="AITIWidget.open(); return false;">
+                💬 Experimentar Agora
+            </a>
+
+            <div class="try-questions">
+                <h4>💡 Experimente perguntar:</h4>
+                <ul>
+                    <li onclick="askQuestion(this.innerText)">Qual o prazo de entrega?</li>
+                    <li onclick="askQuestion(this.innerText)">Como faço uma devolução?</li>
+                    <li onclick="askQuestion(this.innerText)">Métodos de pagamento</li>
+                    <li onclick="askQuestion(this.innerText)">Política de garantia</li>
+                </ul>
+            </div>
+
+            <div class="features">
+                <div class="feature">
+                    <div class="feature-icon">🤖</div>
+                    <h3>IA Avançada</h3>
+                    <p>Respostas naturais baseadas nos seus documentos</p>
+                </div>
+                <div class="feature">
+                    <div class="feature-icon">⚡</div>
+                    <h3>Resposta Imediata</h3>
+                    <p>Menos de 3 segundos para responder</p>
+                </div>
+                <div class="feature">
+                    <div class="feature-icon">📊</div>
+                    <h3>Analytics</h3>
+                    <p>Métricas de satisfação e performance</p>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer class="footer">
+        © 2026 AiParaTi - Soluções de IA para PMEs Portuguesas
+    </footer>
+
+    <!-- AITI Widget -->
+    <script src="/widget/aiti-widget.js"></script>
+    <script>
+        AITIWidget.init({
+            apiUrl: window.location.origin,
+            primaryColor: '#764ba2',
+            title: 'Assistente Demo',
+            subtitle: 'Empresa Exemplo, Lda',
+            welcomeMessage: 'Olá! 👋 Sou o assistente virtual da Empresa Exemplo. Posso ajudar com informações sobre entregas, pagamentos, devoluções e muito mais. O que precisa saber?'
+        });
+
+        function askQuestion(question) {
+            AITIWidget.open();
+            setTimeout(() => {
+                AITIWidget.sendMessage(question);
+            }, 500);
+        }
+    </script>
+</body>
+</html>
