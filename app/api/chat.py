@@ -127,13 +127,16 @@ async def delete_conversation(conversation_id: str):
     return {"status": "deleted", "conversation_id": conversation_id}
 
 
-@router.post("/chat/feedback")
-async def submit_feedback(
-    conversation_id: str,
-    message_index: int,
-    rating: int = Field(..., ge=1, le=5),
+class FeedbackRequest(BaseModel):
+    """Feedback request model."""
+    conversation_id: str
+    message_index: int
+    rating: int = Field(..., ge=1, le=5)
     comment: Optional[str] = None
-):
+
+
+@router.post("/chat/feedback")
+async def submit_feedback(feedback: FeedbackRequest):
     """
     Submit feedback for a response.
     
@@ -141,14 +144,14 @@ async def submit_feedback(
     """
     logger.info(
         "Feedback received",
-        conversation_id=conversation_id,
-        message_index=message_index,
-        rating=rating
+        conversation_id=feedback.conversation_id,
+        message_index=feedback.message_index,
+        rating=feedback.rating
     )
     
     # In production, store feedback in database
     return {
         "status": "received",
-        "conversation_id": conversation_id,
-        "rating": rating
+        "conversation_id": feedback.conversation_id,
+        "rating": feedback.rating
     }
