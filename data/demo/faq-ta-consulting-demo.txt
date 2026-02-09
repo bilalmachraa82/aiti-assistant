@@ -1,0 +1,172 @@
+# FAQ - AITI Assistant - Demo TA Consulting
+
+## Sobre a TA Consulting
+
+### Quem é a TA Consulting?
+A TA Consulting é uma empresa especializada em transformação digital e consultoria estratégica para PMEs em Portugal. Oferece soluções em automação, IA e otimização de processos empresariais.
+
+### Qual é a missão da TA Consulting?
+Digitalizar e automatizar processos empresariais usando Inteligência Artificial. Transformar dados em insights valiosos para crescimento exponencial.
+
+### Quais os principais serviços?
+1. **Consultoria IA** - Implementação de soluções de IA personalizadas
+2. **Automação de Processos** - RPA e workflow automation com n8n
+3. **Análise de Dados** - Business Intelligence e dashboards
+4. **Chatbots Inteligentes** - Assistentes virtuais com RAG
+
+### Onde está localizada?
+Lisboa, Portugal. Atende clientes em toda a Europa via remote.
+
+### Qual é o horário de funcionamento?
+Segunda a sexta, 09:00 - 18:00 (hora de Lisboa). Suporte emergência 24/7.
+
+## Serviços de IA
+
+### O que é uma AITI Assistant?
+É um chatbot inteligente com Retrieval-Augmented Generation (RAG). Lê seus documentos (FAQs, políticas, manuais) e responde perguntas específicas com base nesses dados.
+
+### Como funciona o RAG?
+1. O cliente fornece documentos (PDFs, Excel, Word, TXT)
+2. O sistema converte para "embeddings" (vetores numéricos)
+3. Quando alguém pergunta, o sistema encontra os trechos relevantes
+4. A IA gera uma resposta contextualizada baseada nesses trechos
+5. A fonte é sempre citada (rastreabilidade)
+
+### Qual é a precisão?
+Depende da qualidade dos documentos. Em geral:
+- Documentos bem estruturados: 85-95% de precisão
+- FAQs simples: 90%+
+- Documentação desorganizada: 60-70%
+
+### Quanto custa implementar?
+- Projeto básico: €2.500 - €5.000
+- Projeto médio: €5.000 - €15.000
+- Projeto enterprise: €15.000+
+
+### Quanto demora?
+- Setup básico: 1-2 semanas
+- Integração customizada: 2-4 semanas
+- Training e suporte: contínuo
+
+## Automação com n8n
+
+### O que é n8n?
+É uma plataforma open-source para automação de workflows. Conecta qualquer aplicação (Gmail, Slack, CRM, ERP) sem código.
+
+### Exemplos de automação
+- Processar emails → Extrair dados → Guardar em BD
+- Converter leads → Criar tickets → Notificar equipa
+- Scraping de dados → Transformação → Dashboard atualizado
+- Alertas automáticos → Escalação → Notificações
+
+### Qual é o ROI?
+Tipicamente 3-6 meses. Automatizar processos manuais economiza 15-20 horas/semana por funcionário.
+
+### Posso integrar com meu ERP?
+Sim! n8n conecta com: Moloni, Sage, SAP, Oracle, Microsoft Dynamics, etc.
+
+## Análise de Dados
+
+### Que dashboards vocês criam?
+- RFM (Recency, Frequency, Monetary) - análise de clientes
+- Vendas em tempo real - KPIs diários
+- Cobrança - aging de faturas
+- Inventário - otimização stock
+- Custos - análise de profitabilidade
+
+### Qual é o tempo de resposta?
+- Dashboard simples: 1 semana
+- Dashboard complexo: 2-4 semanas
+- Integrações ERP: +1 semana
+
+### Posso exportar dados?
+Sim! Excel, CSV, PDF, ou integrado direto em seu sistema.
+
+## Implementação e Suporte
+
+### Como é o processo de implementação?
+1. Discovery call (1h) - entender necessidades
+2. Proposta customizada
+3. Assinatura de contrato
+4. Desenvolvimento (iterativo)
+5. Testing e validação
+6. Go-live e training
+7. Suporte pós-launch
+
+### Preciso fornecer dados sensíveis?
+Não! Você controla totalmente os dados. Podemos:
+- Usar dados anónimos/fictícios para testes
+- Implementar em seus servidores (on-premise)
+- Usar encriptação end-to-end
+
+### Qual é a política de dados?
+- Conformidade RGPD 100%
+- Nenhum dado é partilhado com terceiros
+- Você pode pedir exclusão a qualquer momento
+- Backups automáticos e disaster recovery
+
+### Que suporte recebo?
+- Suporte técnico durante projeto
+- 30 dias de free support pós-launch
+- Contrato de suporte opcional (€500-2000/mês)
+- Updates e melhorias inclusos
+
+## Tecnologia e Segurança
+
+### Que tecnologias usam?
+- **LLM:** OpenAI (GPT-4o), Claude (Anthropic), ou local (Ollama)
+- **Vector DB:** ChromaDB, Pinecone, Qdrant
+- **Backend:** Python (FastAPI), Node.js
+- **Frontend:** React, Vue
+- **Infrastructure:** AWS, Azure, Railway, Vercel
+
+### É seguro?
+Sim! Implementamos:
+- Encriptação TLS para comunicação
+- Autenticação multi-fator
+- Rate limiting contra abuso
+- Monitoramento 24/7
+- Compliance RGPD, SOC 2, ISO 27001
+
+### Que tempo de uptime garantem?
+99.5% de uptime em produção. SLA disponível para contratos enterprise.
+
+## Preços e Orçamento
+
+### Qual é o modelo de preços?
+- **Setup inicial:** €2.500 - €25.000 (one-time)
+- **Suporte mensal:** €500 - €5.000 (opcional)
+- **Custos de API:** Passthrough (OpenAI, Anthropic)
+
+### Há versão grátis?
+Sim! POC (Proof of Concept) para validar conceito. Não recomendado para produção.
+
+### Oferece desconto para longo prazo?
+Sim! Contrato anual: 10-15% desconto.
+
+## Contacto e Próximos Passos
+
+### Como posso agendar uma demo?
+Via chat (este assistente) ou email: contact@ta-consulting.pt
+
+### Preciso de uma proposta?
+Sim! Agende uma discovery call e receberá orçamento customizado em 2-3 dias.
+
+### Qual é o primeiro passo?
+1. Responda aqui com seu case de uso
+2. Vamos agendar uma videochamada
+3. Apresentamos solução customizada
+4. Você aprova ou discute ajustes
+5. Começamos o projeto!
+
+### Posso falar com um especialista?
+Sim! Chat direto com Tech Lead disponível 09:00-18:00 (Lisboa).
+
+### Há referências/clientes anteriores?
+Sim, podemos partilhar estudos de caso de clientes que concordaram. RGPD-compliant.
+
+---
+
+**Assistente AITI-Assistant**  
+*Powered by TA Consulting*  
+Versão Demo - 08 Feb 2026

@@ -7,7 +7,7 @@ from contextlib import asynccontextmanager
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
 from fastapi.staticfiles import StaticFiles
-from fastapi.responses import FileResponse
+from fastapi.responses import FileResponse, RedirectResponse
 import structlog
 
 from app.config import settings
@@ -80,20 +80,14 @@ if os.path.exists(widget_path):
 
 @app.get("/")
 async def root():
-    """Root endpoint - API info."""
-    return {
-        "name": "AITI Assistant",
-        "version": "1.0.0",
-        "status": "running",
-        "docs": "/docs",
-        "demo": "/demo"
-    }
+    """Root endpoint - redirect to demo."""
+    return RedirectResponse(url="/demo")
 
 
 @app.get("/demo")
 async def demo():
-    """Serve the demo page."""
-    demo_path = os.path.join(widget_path, "demo.html")
+    """Serve the premium demo page."""
+    demo_path = os.path.join(widget_path, "demo-premium.html")
     if os.path.exists(demo_path):
         return FileResponse(demo_path)
     return {"error": "Demo page not found"}
