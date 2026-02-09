@@ -14,7 +14,6 @@ class Settings(BaseSettings):
     # LLM Configuration
     openai_api_key: Optional[str] = Field(None, alias="OPENAI_API_KEY")
     anthropic_api_key: Optional[str] = Field(None, alias="ANTHROPIC_API_KEY")
-    gemini_api_key: Optional[str] = Field(None, alias="GEMINI_API_KEY")
     llm_model: str = Field("gpt-4o-mini", alias="LLM_MODEL")
     embedding_model: str = Field("text-embedding-3-small", alias="EMBEDDING_MODEL")
     
@@ -64,13 +63,11 @@ class Settings(BaseSettings):
     
     def get_llm_provider(self) -> str:
         """Determine which LLM provider to use."""
-        if self.openai_api_key and self.openai_api_key != "sk-your-openai-key":
+        if self.openai_api_key:
             return "openai"
         elif self.anthropic_api_key:
             return "anthropic"
-        elif self.gemini_api_key:
-            return "gemini"
-        raise ValueError("No LLM API key configured. Set OPENAI_API_KEY, ANTHROPIC_API_KEY, or GEMINI_API_KEY.")
+        raise ValueError("No LLM API key configured. Set OPENAI_API_KEY or ANTHROPIC_API_KEY.")
     
     class Config:
         env_file = ".env"
