@@ -61,7 +61,7 @@ class EmbeddingService:
         elif self.provider == "gemini":
             try:
                 result = genai.embed_content(
-                    model="models/embedding-001",
+                    model="models/gemini-embedding-001",
                     content=text
                 )
                 return result['embedding']
@@ -102,7 +102,7 @@ class EmbeddingService:
                 embeddings = []
                 for text in texts:
                     result = genai.embed_content(
-                        model="models/embedding-001",
+                        model="models/gemini-embedding-001",
                         content=text
                     )
                     embeddings.append(result['embedding'])
