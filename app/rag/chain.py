@@ -8,6 +8,12 @@ import openai
 import anthropic
 import structlog
 
+try:
+    import google.generativeai as genai
+    GEMINI_AVAILABLE = True
+except ImportError:
+    GEMINI_AVAILABLE = False
+
 from app.config import settings
 from app.rag.vectorstore import VectorStore
 
@@ -32,6 +38,9 @@ class RAGChain:
             self.client = openai.OpenAI(api_key=settings.openai_api_key)
         elif self.provider == "anthropic":
             self.client = anthropic.Anthropic(api_key=settings.anthropic_api_key)
+        elif self.provider == "gemini" and GEMINI_AVAILABLE:
+            genai.configure(api_key=settings.gemini_api_key)
+            self.client = genai.GenerativeModel("gemini-2.0-flash")
     
     def query(
         self,
@@ -165,6 +174,12 @@ RESPOSTA:"""
                 messages=messages
             )
             return response.content[0].text.strip()
+        
+        elif self.provider == "gemini":
+            # Build full prompt for Gemini
+            full_prompt = f"{system_prompt}\n\n{user_message}"
+            response = self.client.generate_content(full_prompt)
+            return response.text.strip()
         
         raise ValueError(f"Unknown provider: {self.provider}")
     
