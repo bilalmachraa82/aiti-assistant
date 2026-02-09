@@ -12,7 +12,13 @@ import structlog
 
 from app.config import settings
 from app.api import chat, documents, health
-from app.rag.vectorstore import VectorStore
+from app.api import direct_chat
+
+try:
+    from app.rag.vectorstore import VectorStore
+    VECTORSTORE_AVAILABLE = True
+except Exception:
+    VECTORSTORE_AVAILABLE = False
 
 # Configure logging
 structlog.configure(
@@ -38,9 +44,17 @@ async def lifespan(app: FastAPI):
     # Startup
     logger.info("Starting AITI Assistant", version="1.0.0")
     
-    # Initialize vector store
-    app.state.vectorstore = VectorStore()
-    logger.info("Vector store initialized", persist_dir=settings.chroma_persist_dir)
+    # Initialize vector store (optional - falls back to direct chat)
+    if VECTORSTORE_AVAILABLE:
+        try:
+            app.state.vectorstore = VectorStore()
+            logger.info("Vector store initialized", persist_dir=settings.chroma_persist_dir)
+        except Exception as e:
+            logger.warning(f"Vector store init failed, using direct chat: {e}")
+            app.state.vectorstore = None
+    else:
+        logger.info("VectorStore not available, using direct Gemini chat")
+        app.state.vectorstore = None
     
     yield
     
@@ -68,7 +82,8 @@ app.add_middleware(
 )
 
 # Include routers
-app.include_router(chat.router, prefix="/api", tags=["Chat"])
+app.include_router(direct_chat.router, prefix="/api/v2", tags=["Direct Chat"])
+app.include_router(chat.router, prefix="/api", tags=["Chat (RAG)"])
 app.include_router(documents.router, prefix="/api", tags=["Documents"])
 app.include_router(health.router, prefix="/api", tags=["Health"])
 
